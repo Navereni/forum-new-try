@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./frontend
+    image: navereni/todo-app-frontend:latest
+    container_name: todo-app_frontend
+    ports:
+    - target: 5000
+      published: 80
+  backend:
+    build: ./backend
+    image: navereni/todo-app-backend:latest
+    container_name: todo-app_backend
+    environment:
+      DATABASE_URI:
+      CREATE_SCHEMA:
+    ports:
+    - target: 5000
+      published: 5000

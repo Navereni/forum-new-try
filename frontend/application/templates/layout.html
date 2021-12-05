@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Let's Chat - {{ title }}</title>
+    </head>
+    <style>
+        .button {
+          background-color: #087fb6;
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+    </style>
+</head>
+    <body style="background-color: rgb(208, 253, 199);">
+        <h1>Let's Chat - {{ title }}</h1>
+        <p>
+            <a href="{{ url_for('home') }}">
+                <button class="button">Home</button>
+            </a>
+            <a href="{{ url_for('create_post') }}">
+                <button class="button">Add Post</button>
+            </a>
+            <a href="{{ url_for('create_comment') }}">
+                <button class="button">Add Comment</button>
+            </a>
+        </p>
+        {% block body %}
+        {% endblock body %}
+    </body>
+</html>

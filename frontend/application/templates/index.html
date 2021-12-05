@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <h2> Posts</h2>
+    {% for post in all_posts %}
+    
+        <p>
+            Post: {{ post["name"] }}<br>
+            <a href="{{ url_for('update_post', id=post.id) }}">Edit</a>
+            <a href="{{ url_for('delete_post', id=post.id) }}">Delete</a>
+        </p>    
+  
+    {% endfor %}
+    
+    <h2>Comment Posts</h2>
+    {% for comment in all_comments %}
+
+        <p>
+            Comment: {{ comment["name"] }}<br>
+            <a href="{{ url_for('update_post', id=post.id) }}">Edit</a>
+            <a href="{{ url_for('delete_post', id=post.id) }}">Delete</a>
+        </p>    
+   
+    {% endfor %}
+
+{% endblock body %}
